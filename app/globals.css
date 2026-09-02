@@ -483,12 +483,32 @@ h3 {
 }
 
 @media (max-width: 640px) {
+  .nav {
+    gap: 8px;
+    padding: 0 12px;
+  }
+
   .nav-ticker {
     display: none;
   }
 
+  .brand-mark {
+    width: 32px;
+    height: 32px;
+  }
+
   .brand-name {
-    font-size: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .nav-ctas {
+    gap: 6px;
+  }
+
+  .nav-ctas .btn {
+    min-height: 36px;
+    padding: 0 12px;
+    font-size: 0.82rem;
   }
 
   .facts,

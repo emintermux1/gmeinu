@@ -1,4 +1,10 @@
 import Image from "next/image";
+import { CopyAddress } from "./copy-address";
+import {
+  TOKEN_ADDRESS,
+  TOKEN_ADDRESS_SHORT,
+  TOKEN_EXPLORER_URL,
+} from "./token";
 
 const BUY_HREF = "#";
 const CHART_HREF = "#";
@@ -33,7 +39,14 @@ export default function Home() {
             GameStop <em>Inu</em>
           </span>
         </a>
-        <span className="nav-ticker">$GMEINU</span>
+        <CopyAddress
+          address={TOKEN_ADDRESS}
+          className="nav-ca"
+          label="$GMEINU"
+          labelClassName="nav-ca-tick"
+          value={TOKEN_ADDRESS_SHORT}
+          valueClassName="nav-ca-addr"
+        />
         <nav className="nav-ctas" aria-label="Primary">
           <a className="btn btn-solid" href={BUY_HREF}>
             Buy
@@ -125,24 +138,47 @@ export default function Home() {
         </section>
 
         <section className="stats" id="stats" aria-label="Token stats">
-          <dl>
-            <div>
-              <dt>Ticker</dt>
-              <dd>$GMEINU</dd>
+          <div className="stats-inner">
+            <div className="live-ca">
+              <p className="live-ca-k">Live contract</p>
+              <div className="live-ca-row">
+                <CopyAddress
+                  address={TOKEN_ADDRESS}
+                  className="live-ca-btn"
+                  value={TOKEN_ADDRESS}
+                  valueClassName="live-ca-addr"
+                  hint="Copy"
+                  hintClassName="live-ca-hint"
+                />
+                <a
+                  className="live-ca-exp"
+                  href={TOKEN_EXPLORER_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Explorer
+                </a>
+              </div>
             </div>
-            <div>
-              <dt>Pair</dt>
-              <dd>$GME</dd>
-            </div>
-            <div>
-              <dt>Fees</dt>
-              <dd>100%</dd>
-            </div>
-            <div>
-              <dt>Rewards</dt>
-              <dd>$GME to holders</dd>
-            </div>
-          </dl>
+            <dl>
+              <div>
+                <dt>Ticker</dt>
+                <dd>$GMEINU</dd>
+              </div>
+              <div>
+                <dt>Pair</dt>
+                <dd>$GME</dd>
+              </div>
+              <div>
+                <dt>Fees</dt>
+                <dd>100%</dd>
+              </div>
+              <div>
+                <dt>Rewards</dt>
+                <dd>$GME to holders</dd>
+              </div>
+            </dl>
+          </div>
         </section>
 
         <section className="close">

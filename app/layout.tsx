@@ -21,7 +21,7 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://gmeinu.vercel.app"),
+  metadataBase: new URL("https://gamestopinu.fun"),
   title: "GameStop Inu — $GMEINU",
   description:
     "Own the Inu. Earn $GME. GameStop Inu, backed by GameStop. Paired with $GME. 100% of fees go to holders as $GME rewards.",
